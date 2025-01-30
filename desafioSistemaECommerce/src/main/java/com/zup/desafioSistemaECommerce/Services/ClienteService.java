@@ -4,6 +4,7 @@ import com.zup.desafioSistemaECommerce.dtos.ClienteDTO;
 import com.zup.desafioSistemaECommerce.models.Cliente;
 import com.zup.desafioSistemaECommerce.repositories.ClienteRepository;
 import com.zup.desafioSistemaECommerce.validations.CPFValidator;
+import com.zup.desafioSistemaECommerce.validations.ResourceNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,5 +48,18 @@ public class ClienteService {
         Cliente cliente = (Cliente) clienteRepository.findByCpf(cpf)
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado!"));
         return new ClienteDTO(cliente.getId(), cliente.getNome(), cliente.getEmail(), cliente.getCpf());
+    }
+
+    public ClienteDTO atualizaCliente(String cpf, Cliente atualizaCliente) {
+        Cliente existeCliente = (Cliente) clienteRepository.findByCpf(cpf)
+                .orElseThrow(() -> new ResourceNotFoundException("Não foi possível atualizar pois o cliente não foi encontrado."));
+
+        existeCliente.setNome(atualizaCliente.getNome());
+        existeCliente.setEmail(atualizaCliente.getEmail());
+        existeCliente.setCpf(atualizaCliente.getCpf());
+
+        Cliente salvaCliente = clienteRepository.save(existeCliente);
+
+        return new ClienteDTO(salvaCliente.getId(), salvaCliente.getNome(), salvaCliente.getEmail(), salvaCliente.getCpf());
     }
 }

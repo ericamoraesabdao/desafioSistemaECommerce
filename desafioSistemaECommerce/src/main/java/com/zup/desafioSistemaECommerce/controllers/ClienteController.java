@@ -11,7 +11,6 @@ import jakarta.validation.Valid;
 
 import java.util.List;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("/clientes")
@@ -39,4 +38,10 @@ public class ClienteController {
     public ResponseEntity<ClienteDTO> ClientePorCPF(@Valid @PathVariable String cpf) {
         return ResponseEntity.ok(clienteService.ClientePorCPF(cpf));
     }
+
+    @PutMapping("/{cpf}")
+    public ResponseEntity<ClienteDTO> atualizaCliente(@PathVariable String cpf, @Valid @RequestBody Cliente atualizaCliente) {
+        return ResponseEntity.ok(clienteService.atualizaCliente(cpf, atualizaCliente));
+    }
+
 }
