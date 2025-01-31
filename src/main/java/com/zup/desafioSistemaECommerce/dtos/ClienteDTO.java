@@ -6,7 +6,6 @@ public class ClienteDTO {
     private String emailCliente;
     private String cpfCliente;
 
-
     public ClienteDTO(Long idCliente, String nomeCliente, String emailCliente, String cpfCliente) {
         this.idCliente = idCliente;
         this.nomeCliente = nomeCliente;
