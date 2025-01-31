@@ -11,7 +11,6 @@ import jakarta.validation.Valid;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {
