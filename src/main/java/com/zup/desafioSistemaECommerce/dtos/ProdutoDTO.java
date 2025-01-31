@@ -44,4 +44,5 @@ public class ProdutoDTO {
     public void setQuantidadeProduto(int quantidadeProduto) {
         this.quantidadeProduto = quantidadeProduto;
     }
+
 }
