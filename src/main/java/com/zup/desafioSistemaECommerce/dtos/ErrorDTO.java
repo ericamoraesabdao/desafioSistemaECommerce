@@ -14,4 +14,5 @@ public class ErrorDTO {
     public void setErro(String erro) {
         this.erro = erro;
     }
+
 }
