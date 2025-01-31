@@ -47,6 +47,7 @@ public class ClienteService {
     public ClienteDTO ClientePorCPF(String cpf) {
         Cliente cliente = (Cliente) clienteRepository.findByCpf(cpf)
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado!"));
+
         return new ClienteDTO(cliente.getId(), cliente.getNome(), cliente.getEmail(), cliente.getCpf());
     }
 
