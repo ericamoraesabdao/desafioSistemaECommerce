@@ -25,7 +25,6 @@ public class Cliente {
     private String cpf;
 
     public Cliente(){
-
     }
 
     public Cliente(Long id, String nome, String email, String cpf) {
