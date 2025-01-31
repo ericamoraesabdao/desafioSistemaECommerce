@@ -1,7 +1,6 @@
 package com.zup.desafioSistemaECommerce.controllers;
 
 import com.zup.desafioSistemaECommerce.Services.CompraService;
-import com.zup.desafioSistemaECommerce.dtos.ClienteDTO;
 import com.zup.desafioSistemaECommerce.dtos.CompraDTO;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
