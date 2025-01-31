@@ -36,4 +36,5 @@ public class CompraDTO {
     public void setProduto(List<ProdutoCompraDTO> produto) {
         this.produto = produto;
     }
+
 }
