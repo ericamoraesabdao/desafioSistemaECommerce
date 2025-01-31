@@ -36,6 +36,7 @@ public class ProdutoService {
     }
 
     public boolean produtoExiste(Long id) {
+
         return produtoRepository.existsById(id);
     }
 
