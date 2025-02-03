@@ -28,14 +28,14 @@ public class ClienteController {
         }
     }
 
-    @GetMapping
-    public List<ClienteDTO> listarClientes() {
-        return clienteService.listarClientes();
-    }
-
     @GetMapping("/{cpf}")
     public ResponseEntity<ClienteDTO> ClientePorCPF(@Valid @PathVariable String cpf) {
         return ResponseEntity.ok(clienteService.ClientePorCPF(cpf));
+    }
+
+    @GetMapping
+    public List<ClienteDTO> listarClientes() {
+        return clienteService.listarClientes();
     }
 
     @PutMapping("/{cpf}")
